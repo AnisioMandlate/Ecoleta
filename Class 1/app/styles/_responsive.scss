@@ -1,0 +1,27 @@
+@media (max-width: 900px) {
+  .main-home {
+    background-position: center;
+    background-position-y: 30vh;
+
+    .content {
+      align-items: center;
+      text-align: center;
+
+      header a {
+        position: absolute;
+        bottom: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    main {
+      backdrop-filter: opacity(50%);
+      align-items: center;
+
+      p {
+        background-color: $secondcolor;
+      }
+    }
+  }
+}

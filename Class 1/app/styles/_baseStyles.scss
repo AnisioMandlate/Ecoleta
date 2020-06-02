@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #f0f0f0;
+}
+
+h1 {
+  font-family: "Ubuntu", sans-serif;
+}
+
+.main-home {
+  background: url(../../../extras-aula-1/icones/home-background.svg) no-repeat;
+  height: 100vh;
+  background-position: 35vw 20vh;
+
+  .content {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  header {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    a {
+      display: flex;
+      text-decoration: none;
+      font-weight: 700;
+      color: $font-color;
+
+      span {
+        background-image: url(../../../extras-aula-1/icones/log-in.svg);
+        width: 20px;
+        height: 20px;
+        margin-right: 16px;
+        display: flex;
+      }
+    }
+  }
+
+  main {
+    max-width: 560px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h1 {
+      font-size: 2.7em;
+      color: $font-color;
+    }
+
+    p {
+      font-size: 1.3em;
+      line-height: 1.4em;
+      margin-top: 24px;
+    }
+
+    a {
+      width: 100%;
+      max-width: 360px;
+      margin-top: 20px;
+      background-color: $secondary-color;
+      color: white;
+      height: 70px;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      transition: 1s;
+
+      span {
+        width: 72px;
+        height: 72px;
+        background-color: rgba($color: #000000, $alpha: 0.08);
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      strong {
+        flex: 1;
+        text-align: center;
+      }
+    }
+
+    a:hover {
+      background-color: darken($color: $secondary-color, $amount: 9);
+    }
+
+    span::after {
+      content: "";
+      background-image: url(../../../extras-aula-1/icones/search.svg);
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
