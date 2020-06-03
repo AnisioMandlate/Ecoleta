@@ -26,7 +26,7 @@
   }
 
   form {
-    background-color: #fff;
+    background-color: $text-color;
     max-width: 700px;
     margin: 80px auto;
     padding: 60px;
@@ -89,7 +89,7 @@
       height: 65px;
       background-color: $secondary-color;
       border-radius: 8px;
-      color: #fff;
+      color: $text-color;
       font-weight: bold;
       font-size: 16px;
       border: 0;
