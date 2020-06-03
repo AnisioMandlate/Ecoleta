@@ -1,0 +1,104 @@
+.registar-home {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+
+  header {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    a {
+      color: $font-color;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+
+      span {
+        background-image: url(../../../extras-aula-1//icones/arrow-left.svg);
+        display: flex;
+        width: 20px;
+        height: 24px;
+        margin-right: 16px;
+      }
+    }
+  }
+
+  form {
+    background-color: #fff;
+    max-width: 700px;
+    margin: 80px auto;
+    padding: 60px;
+    border-radius: 20px;
+
+    h1 {
+      font-size: 32px;
+    }
+
+    fieldset {
+      margin: 24px 8px 0;
+      border: 0;
+
+      legend {
+        margin-bottom: 24px;
+        h2 {
+          font-size: 24px;
+        }
+      }
+    }
+
+    .field {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      margin-bottom: 16px;
+    }
+
+    .field-group {
+      display: flex;
+
+      .field + .field {
+        margin-left: 24px;
+      }
+    }
+
+    input,
+    select {
+      background-color: $input-color;
+      border: none;
+      padding: 16px;
+      font-size: 16px;
+      outline: none;
+      border-radius: 8px;
+    }
+
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+
+    label {
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+
+    button {
+      width: 260px;
+      height: 65px;
+      background-color: $secondary-color;
+      border-radius: 8px;
+      color: #fff;
+      font-weight: bold;
+      font-size: 16px;
+      border: 0;
+      margin: 8px;
+      transition: ease 1s;
+    }
+
+    button:hover {
+      background-color: darken($color: $secondary-color, $amount: 6);
+    }
+  }
+}
