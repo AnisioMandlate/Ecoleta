@@ -9,7 +9,7 @@
 
       header a {
         position: absolute;
-        bottom: 50px;
+        bottom: 30px;
         left: 50%;
         transform: translateX(-50%);
       }
@@ -23,5 +23,23 @@
         background-color: $secondcolor;
       }
     }
+  }
+}
+
+@media (max-height: 675px) {
+  header {
+    margin-top: 10px !important;
+
+    a {
+      background-color: $secondcolor;
+    }
+
+    span {
+      margin: 0 !important;
+    }
+  }
+
+  main {
+    margin-top: -70px;
   }
 }
