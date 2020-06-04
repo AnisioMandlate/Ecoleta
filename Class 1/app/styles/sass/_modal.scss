@@ -7,7 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: 1s;
+  transition: all 0.3s;
 
   .content {
     color: $text-color;

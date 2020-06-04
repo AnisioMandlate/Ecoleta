@@ -7,11 +7,15 @@
       align-items: center;
       text-align: center;
 
-      header a {
-        position: absolute;
-        bottom: 30px;
-        left: 50%;
-        transform: translateX(-50%);
+      header {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 20px !important;
+
+        a {
+          margin-top: 20px;
+        }
       }
     }
 
@@ -21,6 +25,111 @@
 
       p {
         background-color: $secondcolor;
+      }
+    }
+  }
+
+  #modal {
+    .content {
+      width: 100%;
+      padding: 16px;
+    }
+
+    .header a {
+      margin-left: -108px;
+      position: relative;
+      top: -132px;
+    }
+
+    form {
+      label {
+        margin-bottom: 20px;
+      }
+
+      .field {
+        flex-direction: column;
+
+        input {
+          margin-bottom: 24px;
+          border-radius: 10px;
+        }
+
+        button {
+          width: 100%;
+          height: 50px;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+
+  .pesquisa-home {
+    overflow: hidden;
+
+    header {
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 20px !important;
+
+      a {
+        margin-top: 20px;
+      }
+    }
+
+    .cards {
+      grid-template-columns: 1fr !important;
+      margin-bottom: 30px;
+
+      .card img {
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .registar-home {
+    header {
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 20px !important;
+
+      a {
+        margin-top: 20px;
+      }
+    }
+    form {
+      width: 100%;
+      padding: 10px;
+
+      fieldset {
+        margin: 24px 0 0;
+      }
+
+      .field {
+        flex-direction: column;
+
+        input {
+          width: 100%;
+        }
+      }
+
+      .field-group {
+        flex-direction: column;
+
+        .field + .field {
+          margin: 0;
+        }
+      }
+
+      .items-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      button {
+        width: 100%;
       }
     }
   }
