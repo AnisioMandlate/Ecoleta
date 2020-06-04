@@ -10,7 +10,7 @@
     <div class="registar-home">
       <header>
         <img src="../../extras-aula-1/icones/logo.svg" alt="Logo" />
-        <a href="#">
+        <a href="./index.html">
           <span></span>
           Voltar para home</a
         >
@@ -23,12 +23,12 @@
           </legend>
           <div class="field">
             <label for="">Nome da Entidade</label>
-            <input type="text" name="name" id="name" />
+            <input type="text" name="name" id="name" required />
           </div>
           <div class="field-group">
             <div class="field">
               <label for="address">Endereço</label>
-              <input type="text" name="address" id="endereco" />
+              <input type="text" name="address" id="endereco" required />
             </div>
             <!-- <div class="field">
               <label for="address2">Número</label>
@@ -38,25 +38,73 @@
           <div class="field-group">
             <div class="field">
               <label for="state">Estado/Província</label>
-              <select name="uf">
+              <select name="uf" required>
                 <option value="">Selecione o Estado/Província</option>
               </select>
+              <input type="hidden" name="state" />
             </div>
             <div class="field">
               <label for="city">Cidade</label>
-              <select name="city" disabled>
+              <select name="city" disabled required>
                 <option value="">Selecione a Cidade</option>
               </select>
             </div>
           </div>
         </fieldset>
-        <!-- <fieldset>
+        <fieldset>
           <legend>
             <h2>Itens de recolha</h2>
           </legend>
-        </fieldset> -->
+          <div class="items-grid">
+            <li data-id="1">
+              <img
+                src="../../extras-aula-1/icones/lampadas.svg"
+                alt="Lâmpadas"
+              />
+              <span>Lâmpadas</span>
+            </li>
+            <li data-id="2">
+              <img
+                src="../../extras-aula-1/icones/baterias.svg"
+                alt="Pilhas e Baterías"
+              />
+              <span>Pilhas e Baterías</span>
+            </li>
+            <li data-id="3">
+              <img
+                src="../../extras-aula-1/icones/papeis-papelao.svg"
+                alt="Papéis e Papelão"
+              />
+              <span>Papéis e Papelão</span>
+            </li>
+            <li data-id="4">
+              <img
+                src="../../extras-aula-1/icones/eletronicos.svg"
+                alt="Resíduos Eletrônicos"
+              />
+              <span>Resíduos Eletrônicos</span>
+            </li>
+            <li data-id="5">
+              <img
+                src="../../extras-aula-1/icones/organicos.svg"
+                alt="Resíduos Orgânicos"
+              />
+              <span>Resíduos Orgânicos</span>
+            </li>
+            <li data-id="6">
+              <img
+                src="../../extras-aula-1/icones/oleo.svg"
+                alt="Óleo de Cozinha"
+              />
+              <span>Óleo de Cozinha</span>
+            </li>
+          </div>
+          <input type="hidden" name="items" />
+        </fieldset>
         <button type="submit">Registar ponto de recolha</button>
       </form>
     </div>
+
+    <script src="../js/app.js"></script>
   </body>
 </html>
