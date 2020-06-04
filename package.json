@@ -1,0 +1,24 @@
+{
+  "name": "next-level-week",
+  "version": "1.0.0",
+  "description": "This project allows you to search for trash collect points. You can also add the collect points with the types of waste(whether it is plastic, glass, etc).",
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnisioMandlate/Ecoleta.git"
+  },
+  "author": "anisiomandlate",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnisioMandlate/Ecoleta/issues"
+  },
+  "homepage": "https://github.com/AnisioMandlate/Ecoleta#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
+}
