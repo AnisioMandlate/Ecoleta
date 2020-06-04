@@ -136,6 +136,21 @@
   }
 }
 
+@media only screen and (min-width: 550px) and (max-width: 750px) {
+  .registar-home form {
+    .items-grid {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .field-group {
+      flex-direction: row;
+      .field + .field {
+        margin-left: 16px;
+      }
+    }
+  }
+}
+
 @media (max-height: 575px) {
   header {
     margin-top: 10px !important;
