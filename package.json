@@ -4,7 +4,7 @@
   "description": "This project allows you to search for trash collect points. You can also add the collect points with the types of waste(whether it is plastic, glass, etc).",
   "scripts": {
     "test": "test",
-    "start": "nodemon /Class 1/server.js"
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -19,7 +19,8 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "path": "^0.12.7"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
