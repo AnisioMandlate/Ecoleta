@@ -4,6 +4,12 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
+app.use(express.static("/app"));
+
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/src/views/index.html");
+});
+
 const port = 8000;
 app.listen(port, listening);
 
