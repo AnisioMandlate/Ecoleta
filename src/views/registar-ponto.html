@@ -1,92 +1,95 @@
-<!DOCTYPE html>
-<html lang="pt">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/styles/css/main.css" />
-    <title>Registar Ponto de Recolha</title>
-  </head>
-  <body>
-    <div class="registar-home">
-      {% include "partials/page-header.html"%}
-      <form action="">
-        <h1>Registo de ponto de recolha</h1>
-        <fieldset>
-          <legend>
-            <h2>Dados da entidade</h2>
-          </legend>
-          <div class="field">
-            <label for="">Nome da Entidade</label>
-            <input type="text" name="name" id="name" required />
-          </div>
-          <div class="field-group">
-            <div class="field">
-              <label for="address">Endereço</label>
-              <input type="text" name="address" id="endereco" required />
-            </div>
-            <!-- <div class="field">
-              <label for="address2">Número</label>
-              <input type="number" name="numero" id="numero-casa" />
-            </div> -->
-          </div>
-          <div class="field-group">
-            <div class="field">
-              <label for="state">Estado</label>
-              <select name="uf" required>
-                <option value="">Selecione o Estado/Província</option>
-              </select>
-              <input type="hidden" name="state" />
-            </div>
-            <div class="field">
-              <label for="city">Cidade</label>
-              <select name="city" disabled required>
-                <option value="">Selecione a Cidade</option>
-              </select>
-            </div>
-          </div>
-        </fieldset>
-        <fieldset>
-          <legend>
-            <h2>Itens de recolha</h2>
-          </legend>
-          <div class="items-grid">
-            <li data-id="1">
-              <img src="/img/icones/lampadas.svg" alt="Lâmpadas" />
-              <span>Lâmpadas</span>
-            </li>
-            <li data-id="2">
-              <img src="/img/icones/baterias.svg" alt="Pilhas e Baterías" />
-              <span>Pilhas e Baterías</span>
-            </li>
-            <li data-id="3">
-              <img
-                src="/img/icones/papeis-papelao.svg"
-                alt="Papéis e Papelão"
-              />
-              <span>Papéis e Papelão</span>
-            </li>
-            <li data-id="4">
-              <img
-                src="/img/icones/eletronicos.svg"
-                alt="Resíduos Eletrônicos"
-              />
-              <span>Resíduos Eletrônicos</span>
-            </li>
-            <li data-id="5">
-              <img src="/img/icones/organicos.svg" alt="Resíduos Orgânicos" />
-              <span>Resíduos Orgânicos</span>
-            </li>
-            <li data-id="6">
-              <img src="/img/icones/oleo.svg" alt="Óleo de Cozinha" />
-              <span>Óleo de Cozinha</span>
-            </li>
-          </div>
-          <input type="hidden" name="items" />
-        </fieldset>
-        <button type="submit">Registar ponto de recolha</button>
-      </form>
-    </div>
+{% extends "layout.html" %}
 
-    <script src="/js/app.js"></script>
-  </body>
-</html>
+ {% block title %}
+      <title>Registar Ponto de Recolha</title>
+{% endblock title %}
+    
+{% set mainClass = "registar-home" %}
+
+{% block content %}
+  {% include "partials/page-header.html"%}
+        <form action="">
+          <h1>Registo de ponto de recolha</h1>
+          <fieldset>
+            <legend>
+              <h2>Dados da entidade</h2>
+            </legend>
+            <div class="field">
+              <label for="">Nome da Entidade</label>
+              <input type="text" name="name" id="name" required />
+            </div>
+            <div class="field-group">
+              <div class="field">
+                <label for="address">Endereço</label>
+                <input type="text" name="address" id="endereco" required />
+              </div>
+              <!-- <div class="field">
+                <label for="address2">Número</label>
+                <input type="number" name="numero" id="numero-casa" />
+              </div> -->
+            </div>
+            <div class="field-group">
+              <div class="field">
+                <label for="state">Estado</label>
+                <select name="uf" required>
+                  <option value="">Selecione o Estado/Província</option>
+                </select>
+                <input type="hidden" name="state" />
+              </div>
+              <div class="field">
+                <label for="city">Cidade</label>
+                <select name="city" disabled required>
+                  <option value="">Selecione a Cidade</option>
+                </select>
+              </div>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>
+              <h2>Itens de recolha</h2>
+            </legend>
+            <div class="items-grid">
+              <li data-id="1">
+                <img src="/img/icones/lampadas.svg" alt="Lâmpadas" />
+                <span>Lâmpadas</span>
+              </li>
+              <li data-id="2">
+                <img src="/img/icones/baterias.svg" alt="Pilhas e Baterías" />
+                <span>Pilhas e Baterías</span>
+              </li>
+              <li data-id="3">
+                <img
+                  src="/img/icones/papeis-papelao.svg"
+                  alt="Papéis e Papelão"
+                />
+                <span>Papéis e Papelão</span>
+              </li>
+              <li data-id="4">
+                <img
+                  src="/img/icones/eletronicos.svg"
+                  alt="Resíduos Eletrônicos"
+                />
+                <span>Resíduos Eletrônicos</span>
+              </li>
+              <li data-id="5">
+                <img src="/img/icones/organicos.svg" alt="Resíduos Orgânicos" />
+                <span>Resíduos Orgânicos</span>
+              </li>
+              <li data-id="6">
+                <img src="/img/icones/oleo.svg" alt="Óleo de Cozinha" />
+                <span>Óleo de Cozinha</span>
+              </li>
+            </div>
+            <input type="hidden" name="items" />
+          </fieldset>
+          <button type="submit">Registar ponto de recolha</button>
+        </form>
+{% endblock content %}
+
+ {% block scripts %}
+ <script src="/js/app.js"></script>
+{% endblock scripts %}
+
+  
+
+    
