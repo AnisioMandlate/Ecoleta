@@ -7,6 +7,8 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, "public")));
 
+app.use(express.urlencoded({ extended: true }));
+
 const nunjucks = require("nunjucks");
 nunjucks.configure(__dirname + "/src/views", {
   express: app,
@@ -18,9 +20,41 @@ app.get("/", (req, res) => {
 });
 
 app.get("/registar-ponto", (req, res) => {
-  console.log(req.query);
-
   return res.render("registar-ponto.html");
+});
+
+app.post("/savepoint", (req, res) => {
+  // Insert data in the database
+  const query = `
+      INSERT INTO places (
+          image,
+          name,
+          address,
+          address2,
+          state,
+          city,
+          items
+      ) VALUES (?,?,?,?,?,?,?);
+      `;
+  const values = [
+    req.body.image,
+    req.body.name,
+    req.body.address,
+    req.body.address2,
+    req.body.state,
+    req.body.city,
+    req.body.items,
+  ];
+  function afterDataInsert(err) {
+    if (err) {
+      console.log(err);
+      return res.send("Erro no registo!");
+    }
+    console.log("Your data was saved");
+    console.log(this);
+    return res.render("registar-ponto.html", { saved: true });
+  }
+  db.run(query, values, afterDataInsert);
 });
 
 app.get("/search-results", (req, res) => {

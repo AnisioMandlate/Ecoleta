@@ -8,7 +8,7 @@
 
 {% block content %}
   {% include "partials/page-header.html"%}
-        <form action="">
+        <form action="/savepoint" method="POST">
           <h1>Registo de ponto de recolha</h1>
           <fieldset>
             <legend>
@@ -92,7 +92,17 @@
           </fieldset>
           <button type="submit">Registar ponto de recolha</button>
         </form>
+       
+
+
+        
 {% endblock content %}
+
+{% block modal %}
+  {% if saved %}
+    {%include "partials/ponto-modal.html"%}
+  {% endif %}
+{% endblock modal %}
 
  {% block scripts %}
  <script src="/js/app.js"></script>
