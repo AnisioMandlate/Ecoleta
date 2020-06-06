@@ -9,32 +9,30 @@
 {% block content %}
     {% include "partials/page-header.html"%}
       <main>
-        <h4><strong>2 Pontos</strong> encontrados</h4>
-        <div class="cards">
-          <div class="card">
-            <img src="/img/wallpapers/electronic-waste.jpeg" alt="Colectoria" />
-            <h2>Colectoria</h2>
-            <h3>Resíduos Eletrônicos, Lâmpadas</h3>
-            <p>
-              Rio do Sul, Santa Catarina <br />
-              Guilherme Gemballa, Jardim América <br />
-              N° 260
-            </p>
-          </div>
-          <div class="card">
-            <img
-              src="/img/wallpapers/michael-jin-ET6_fDwZj2U-unsplash (1).jpg"
-              alt="Papersider"
-            />
-            <h2>Papersider</h2>
-            <h3>Papéis e Papelão</h3>
-            <p>
-              Rio do Sul, Santa Catarina <br />
-              Guilherme Gemballa, Jardim América <br />
-              N° 260
-            </p>
-          </div>
-        </div>
+        {% if total > 0 %}
+          <h4><strong>{{total}} Ponto(s)</strong> encontrado(s)</h4>
+            <div class="cards">
+
+              {% for place in places %}
+              <div class="card">
+                  <img src="{{place.image}}" alt="{{place.name}}" />
+                  <h2>{{place.name}}</h2>
+                  <h3>{{place.items}}</h3>
+                  <p>
+                    {{place.city}}, {{place.state}} <br />
+                    {{place.address}} <br />
+                    {{place.address2}}
+                  </p>
+                </div>
+
+              {% endfor %}
+              
+            </div>
+
+            {%else%}
+            <h4><strong>Nenhum</strong> local encontrado</h4>
+        {% endif %}
+        
       </main>
 {% endblock content %}
   

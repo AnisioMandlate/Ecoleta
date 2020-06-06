@@ -1,6 +1,8 @@
 const express = require("express");
 const path = require("path");
 
+const db = require("./src/database/db.js");
+
 const app = express();
 
 app.use(express.static(path.join(__dirname, "public")));
@@ -16,11 +18,20 @@ app.get("/", (req, res) => {
 });
 
 app.get("/registar-ponto", (req, res) => {
+  console.log(req.query);
+
   return res.render("registar-ponto.html");
 });
 
 app.get("/search-results", (req, res) => {
-  return res.render("search-results.html");
+  db.all(`SELECT * FROM places`, function (err, rows) {
+    if (err) {
+      return console.log(err);
+    }
+    const total = rows.length;
+    console.log(rows);
+    return res.render("search-results.html", { places: rows, total });
+  });
 });
 
 const port = 8000;

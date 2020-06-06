@@ -16,7 +16,6 @@ document.querySelector("select[name=uf]").addEventListener("change", getCities);
 function getCities(event) {
   const citySelect = document.querySelector("select[name=city]");
   const stateInput = document.querySelector("input[name=state]");
-  console.log(event.target.value);
   const ufValue = event.target.value;
 
   const indexOfState = event.target.selectedIndex;
@@ -48,6 +47,7 @@ for (const item of itemsList) {
     const itemLi = event.target;
     itemLi.classList.toggle("selected");
     const itemId = itemLi.dataset.id;
+
     /**Check for selected items, if already on the array, remove, if not add to the array*/
     const alreadySelected = selectedItems.findIndex((item) => {
       const itemFound = item == itemId;
@@ -62,7 +62,7 @@ for (const item of itemsList) {
     } else {
       selectedItems.push(itemId);
     }
-    console.log(selectedItems);
+    console.log(`Selected items: ${selectedItems}`);
     collectedItems.value = selectedItems;
   });
 }
