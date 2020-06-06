@@ -1,22 +1,26 @@
 const express = require("express");
 const path = require("path");
-const cors = require("cors");
-const bodyParser = require("body-parser");
 
 const app = express();
 
 app.use(express.static(path.join(__dirname, "public")));
 
+const nunjucks = require("nunjucks");
+nunjucks.configure(__dirname + "/src/views", {
+  express: app,
+  noCache: true,
+});
+
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/src/views/index.html");
+  return res.render("index.html");
 });
 
 app.get("/registar-ponto", (req, res) => {
-  res.sendFile(__dirname + "/src/views/registar-ponto.html");
+  return res.render("registar-ponto.html");
 });
 
 app.get("/search-results", (req, res) => {
-  res.sendFile(__dirname + "/src/views/search-results.html");
+  return res.render("search-results.html");
 });
 
 const port = 8000;
