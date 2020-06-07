@@ -45,6 +45,7 @@ app.post("/savepoint", (req, res) => {
     req.body.city,
     req.body.items,
   ];
+
   function afterDataInsert(err) {
     if (err) {
       console.log(err);
@@ -58,7 +59,14 @@ app.post("/savepoint", (req, res) => {
 });
 
 app.get("/search-results", (req, res) => {
-  db.all(`SELECT * FROM places`, function (err, rows) {
+  const search = req.query.search;
+  if (search == "") {
+    return res.render("search-results.html", { total: 0 });
+  }
+  db.all(`SELECT * FROM places WHERE city LIKE '%${search}%'`, function (
+    err,
+    rows
+  ) {
     if (err) {
       return console.log(err);
     }

@@ -56,10 +56,10 @@ module.exports = db;
 //     console.log(rows);
 //   });
 //   //   Delete data from table
-db.run(`DELETE FROM places WHERE id=?`, [15], function (err) {
-  if (err) {
-    return console.log(err);
-  }
-  console.log("The data has been deleted");
-});
+// db.run(`DELETE FROM places WHERE id=?`, [2], function (err) {
+//   if (err) {
+//     return console.log(err);
+//   }
+//   console.log("The data has been deleted");
+// });
 // });

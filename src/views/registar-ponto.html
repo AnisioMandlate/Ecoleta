@@ -32,7 +32,7 @@
               </div>
               <div class="field">
                 <label for="address2">Número da Casa/Edifício</label>
-                <input type="number" name="address2" id="numero-casa" />
+                <input type="number" name="address2" id="numero-casa" placeholder="Insira apenas números" />
               </div> 
             </div>
             <div class="field-group">
@@ -101,7 +101,7 @@
 {% block modal %}
   {% if saved %}
     {%include "partials/ponto-modal.html"%}
-  {% endif %}
+  {% endif %}  
 {% endblock modal %}
 
  {% block scripts %}
