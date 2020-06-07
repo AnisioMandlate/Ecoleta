@@ -1,7 +1,8 @@
 const express = require("express");
 const path = require("path");
 
-const db = require("./src/database/db.js");
+const db = require("./src/database/db.js").db;
+const addData = require("./src/database/db.js").addData;
 
 const app = express();
 
@@ -24,18 +25,8 @@ app.get("/registar-ponto", (req, res) => {
 });
 
 app.post("/savepoint", (req, res) => {
-  // Insert data in the database
-  const query = `
-      INSERT INTO places (
-          image,
-          name,
-          address,
-          address2,
-          state,
-          city,
-          items
-      ) VALUES (?,?,?,?,?,?,?);
-      `;
+  const table = "places";
+  const fields = "image, name, address, address2, state, city, items";
   const values = [
     req.body.image,
     req.body.name,
@@ -46,16 +37,13 @@ app.post("/savepoint", (req, res) => {
     req.body.items,
   ];
 
-  function afterDataInsert(err) {
-    if (err) {
-      console.log(err);
-      return res.send("Erro no registo!");
-    }
-    console.log("Your data was saved");
-    console.log(this);
-    return res.render("registar-ponto.html", { saved: true });
-  }
-  db.run(query, values, afterDataInsert);
+  addData({ table, fields, values })
+    .then((response) => {
+      return res.render("registar-ponto.html", { saved: true });
+    })
+    .catch((err) => {
+      console.log("error: ", err);
+    });
 });
 
 app.get("/search-results", (req, res) => {
@@ -68,7 +56,7 @@ app.get("/search-results", (req, res) => {
     rows
   ) {
     if (err) {
-      return console.log(err);
+      return console.log("Erro de pesquisa: ", err);
     }
     const total = rows.length;
     console.log(rows);

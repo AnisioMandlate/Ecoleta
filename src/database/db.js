@@ -2,7 +2,30 @@ const sqlite3 = require("sqlite3").verbose();
 
 const db = new sqlite3.Database("./src/database/database.db");
 
-module.exports = db;
+/**
+ * Function to teach Beto how to separate things. Should change this...
+ * @param {string[]} values Values to be inserted on database
+ * @returns {Promise} Result of the operation
+ */
+function addData({ table, fields, values }) {
+  return new Promise((resolve, reject) => {
+    const query = `
+        INSERT INTO ${table} (
+            ${fields}
+        ) VALUES (?,?,?,?,?,?,?);
+        `;
+
+    db.run(query, values, (err) => {
+      if (err) {
+        return reject(err);
+      }
+
+      return resolve(true);
+    });
+  });
+}
+
+module.exports = { db, addData };
 
 // db.serialize(() => {
 //   //   // Create a table
@@ -47,16 +70,16 @@ module.exports = db;
 //     console.log(this);
 //   }
 //   db.run(query, values, afterDataInsert);
-//   //Check for data in the table
-//   db.all(`SELECT * FROM places`, function (err, rows) {
-//     if (err) {
-//       return console.log(err);
-//     }
-//     console.log("Here is your data: ");
-//     console.log(rows);
-//   });
+//Check for data in the table
+// db.all(`SELECT * FROM places`, function (err, rows) {
+//   if (err) {
+//     return console.log(err);
+//   }
+//   console.log("Here is your data: ");
+//   console.log(rows);
+// });
 //   //   Delete data from table
-// db.run(`DELETE FROM places WHERE id=?`, [2], function (err) {
+// db.run(`DELETE FROM places WHERE id=?`, [28], function (err) {
 //   if (err) {
 //     return console.log(err);
 //   }
