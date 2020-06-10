@@ -16,4 +16,4 @@ This project was developed with the following technologies:
 To run this application you can fork, clone, or download this repo. After that go to the project directory and run the following commands:
 
 - `npm install`
-- `npm run start to run the Express server on port 8000`
+- `npm run start to run the Express server on port 5000`
