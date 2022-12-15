@@ -19,7 +19,7 @@
   "dependencies": {
     "body-parser": "^1.19.1",
     "cors": "^2.8.5",
-    "express": "^4.17.2",
+    "express": "^4.17.3",
     "node-pre-gyp": "^0.17.0",
     "nunjucks": "^3.2.1",
     "path": "^0.12.7",
